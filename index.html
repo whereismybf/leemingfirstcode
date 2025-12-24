@@ -1,5 +1,4 @@
-
-
+<!DOCTYPE html
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -17,11 +16,44 @@
 
     body {
       background: linear-gradient(135deg, #f9f9f9 0%, #e8f0ff 100%);
+      background-attachment: fixed;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* === 背景貼圖 === */
+    .cute-stickers {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      opacity: 0.1;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .cute-stickers img {
+      width: 50px;
+      height: 50px;
+      margin: 10px;
+    }
+
+    /* 可愛的貼圖浮動動畫 */
+    @keyframes float {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      50% {
+        transform: translate(-50%, -60%) rotate(360deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
     }
 
     /* === 個人卡片 === */
@@ -133,6 +165,14 @@
   </style>
 </head>
 <body>
+  <!-- 可愛貼圖區 -->
+  <div class="cute-stickers">
+    <img src="https://img.icons8.com/emoji/50/000000/heart-eyes.png" alt="cute sticker">
+    <img src="https://img.icons8.com/emoji/50/000000/sparkles.png" alt="cute sticker">
+    <img src="https://img.icons8.com/emoji/50/000000/alien-monster.png" alt="cute sticker">
+    <img src="https://img.icons8.com/emoji/50/000000/kissing-face-with-smiling-eyes.png" alt="cute sticker">
+  </div>
+
   <div class="card">
     <img src="images/chanchira.jpg" alt="張金蘭 Chanchira Moelae" class="avatar">
 
